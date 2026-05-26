@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 页面元信息：告诉浏览器这是什么类型的文档，用什么字符编码 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 浏览器标签页上显示的标题 -->
+    <title>圣诞节省电王的个人介绍</title>
+
+    <!-- 样式部分：控制网页的外观 -->
+    <style>
+        /* 对整个页面进行基础设置 */
+        body {
+            /* 深色背景 */
+            background-color: #1a1a1a;
+            /* 浅色文字 */
+            color: #e0e0e0;
+            /* 使用无衬线字体，更现代 */
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            /* 去掉页面默认边距 */
+            margin: 0;
+            padding: 0;
+            /* 使用弹性布局让内容居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 让内容区域至少占满整个屏幕高度 */
+            min-height: 100vh;
+        }
+
+        /* 主内容卡片区域 */
+        .card {
+            /* 比背景稍亮的深色卡片背景 */
+            background-color: #2a2a2a;
+            /* 圆角边框 */
+            border-radius: 16px;
+            /* 让整个卡片有一圈明显的边框 */
+            border: 1px solid #444444;
+            /* 卡片内部留白 */
+            padding: 40px;
+            /* 卡片外阴影，在深色背景下需要更明显的阴影 */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            /* 卡片最大宽度，防止在宽屏幕上拉太长 */
+            max-width: 500px;
+            /* 在小屏幕上让卡片自适应宽度 */
+            width: 90%;
+            /* 卡片内文字居中 */
+            text-align: center;
+        }
+
+        /* 姓名的大标题样式 */
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            /* 名字下方留空 */
+            margin-bottom: 16px;
+            /* 名字颜色用亮白色，更突出 */
+            color: #ffffff;
+        }
+
+        /* 自我介绍段落样式 */
+        .intro {
+            font-size: 16px;
+            /* 行高让文字更易读 */
+            line-height: 1.8;
+            /* 段落下方留空 */
+            margin-bottom: 24px;
+            /* 自我介绍用稍柔和的浅灰色 */
+            color: #cccccc;
+        }
+
+        /* 链接列表的容器 */
+        .links {
+            /* 去掉列表默认的小圆点 */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 链接列表中每一项的样式 */
+        .links li {
+            /* 每个链接项之间的间距 */
+            margin-bottom: 14px;
+        }
+
+        /* 链接本身的样式 */
+        .links a {
+            /* 链接文字颜色：亮蓝色，在深色背景下更显眼 */
+            color: #6eb5ff;
+            /* 去掉链接默认的下划线 */
+            text-decoration: none;
+            font-size: 17px;
+            /* 过渡动画，悬停时平滑变化 */
+            transition: color 0.2s ease;
+        }
+
+        /* 鼠标悬停在链接上时的效果 */
+        .links a:hover {
+            /* 悬停时变成更亮的颜色并出现下划线 */
+            color: #99ccff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 主内容卡片，把所有介绍内容包在一起 -->
+    <div class="card">
+
+        <!-- 你的名字，用 h1 标签表示这是页面最重要的标题 -->
+        <h1 class="name">圣诞节省电王</h1>
+
+        <!-- 自我介绍段落 -->
+        <p class="intro">
+            787878
+        </p>
+
+        <!-- 喜欢的链接列表 -->
+        <ul class="links">
+            <li>
+                <!-- 链接到 GitHub -->
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </li>
+            <li>
+                <!-- 链接到 B 站 -->
+                <a href="https://www.bilibili.com" target="_blank">B站</a>
+            </li>
+            <li>
+                <!-- 链接到知乎 -->
+                <a href="https://www.zhihu.com" target="_blank">知乎</a>
+            </li>
+            <li>
+                <!-- 链接到 Z-Library -->
+                <a href="https://z-lib.io" target="_blank">Z-Library</a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>
