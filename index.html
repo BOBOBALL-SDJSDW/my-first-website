@@ -1,139 +1,291 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- 页面元信息：告诉浏览器这是什么类型的文档，用什么字符编码 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 浏览器标签页上显示的标题 -->
     <title>圣诞节省电王的个人介绍</title>
 
-    <!-- 样式部分：控制网页的外观 -->
     <style>
-        /* 对整个页面进行基础设置 */
         body {
-            /* 深色背景 */
             background-color: #1a1a1a;
-            /* 浅色文字 */
             color: #e0e0e0;
-            /* 使用无衬线字体，更现代 */
             font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-            /* 去掉页面默认边距 */
             margin: 0;
-            padding: 0;
-            /* 使用弹性布局让内容居中 */
+            padding: 40px 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            /* 让内容区域至少占满整个屏幕高度 */
+            align-items: flex-start;
             min-height: 100vh;
         }
 
-        /* 主内容卡片区域 */
         .card {
-            /* 比背景稍亮的深色卡片背景 */
             background-color: #2a2a2a;
-            /* 圆角边框 */
             border-radius: 16px;
-            /* 让整个卡片有一圈明显的边框 */
             border: 1px solid #444444;
-            /* 卡片内部留白 */
             padding: 40px;
-            /* 卡片外阴影，在深色背景下需要更明显的阴影 */
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            /* 卡片最大宽度，防止在宽屏幕上拉太长 */
-            max-width: 500px;
-            /* 在小屏幕上让卡片自适应宽度 */
+            max-width: 560px;
             width: 90%;
-            /* 卡片内文字居中 */
             text-align: center;
         }
 
-        /* 姓名的大标题样式 */
         .name {
             font-size: 28px;
             font-weight: bold;
-            /* 名字下方留空 */
             margin-bottom: 16px;
-            /* 名字颜色用亮白色，更突出 */
             color: #ffffff;
         }
 
-        /* 自我介绍段落样式 */
         .intro {
             font-size: 16px;
-            /* 行高让文字更易读 */
             line-height: 1.8;
-            /* 段落下方留空 */
             margin-bottom: 24px;
-            /* 自我介绍用稍柔和的浅灰色 */
             color: #cccccc;
         }
 
-        /* 链接列表的容器 */
+        /* ========== 分区标题样式 ========== */
+        .section-divider {
+            margin: 24px 0 16px 0;
+            padding-top: 20px;
+            border-top: 1px solid #555555;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d4a76a;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* ========== 诗词板块 ========== */
+        .poem {
+            margin-bottom: 26px;
+        }
+
+        .poem-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e8c97a;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .poem-author {
+            font-size: 13px;
+            color: #999999;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .poem-body {
+            font-size: 15px;
+            line-height: 2;
+            color: #cccccc;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        .poem-link {
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .poem-link a {
+            color: #6eb5ff;
+            text-decoration: none;
+        }
+
+        .poem-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== 链接板块 ========== */
         .links {
-            /* 去掉列表默认的小圆点 */
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        /* 链接列表中每一项的样式 */
         .links li {
-            /* 每个链接项之间的间距 */
             margin-bottom: 14px;
         }
 
-        /* 链接本身的样式 */
         .links a {
-            /* 链接文字颜色：亮蓝色，在深色背景下更显眼 */
             color: #6eb5ff;
-            /* 去掉链接默认的下划线 */
             text-decoration: none;
             font-size: 17px;
-            /* 过渡动画，悬停时平滑变化 */
             transition: color 0.2s ease;
         }
 
-        /* 鼠标悬停在链接上时的效果 */
         .links a:hover {
-            /* 悬停时变成更亮的颜色并出现下划线 */
             color: #99ccff;
             text-decoration: underline;
+        }
+
+        /* ========== 链接分类小标题 ========== */
+        .link-category {
+            font-size: 14px;
+            font-weight: bold;
+            color: #888888;
+            text-align: left;
+            margin: 18px 0 10px 0;
+            padding-left: 10px;
+            border-left: 2px solid #666666;
+        }
+
+        /* ========== 返回顶部按钮 ========== */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background-color: #444444;
+            color: #ffffff;
+            border: 1px solid #666666;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            z-index: 999;
+        }
+
+        #back-to-top:hover {
+            background-color: #666666;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <!-- 主内容卡片，把所有介绍内容包在一起 -->
     <div class="card">
 
-        <!-- 你的名字，用 h1 标签表示这是页面最重要的标题 -->
+        <!-- ========== 个人信息 ========== -->
         <h1 class="name">圣诞节省电王</h1>
 
-        <!-- 自我介绍段落 -->
         <p class="intro">
             787878
         </p>
 
-        <!-- 喜欢的链接列表 -->
+        <!-- ========== 毛泽东诗选集 ========== -->
+        <div class="section-divider">
+            <div class="section-title">毛泽东诗选集</div>
+        </div>
+
+        <!-- 沁园春·雪 -->
+        <div class="poem">
+            <div class="poem-title">沁园春 · 雪</div>
+            <div class="poem-body">
+                北国风光，千里冰封，万里雪飘。
+                望长城内外，惟余莽莽；大河上下，顿失滔滔。
+                山舞银蛇，原驰蜡象，欲与天公试比高。
+                须晴日，看红装素裹，分外妖娆。
+
+                江山如此多娇，引无数英雄竞折腰。
+                惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。
+                一代天骄，成吉思汗，只识弯弓射大雕。
+                俱往矣，数风流人物，还看今朝。
+            </div>
+        </div>
+
+        <!-- 七律·长征 -->
+        <div class="poem">
+            <div class="poem-title">七律 · 长征</div>
+            <div class="poem-body">
+                红军不怕远征难，万水千山只等闲。
+                五岭逶迤腾细浪，乌蒙磅礴走泥丸。
+                金沙水拍云崖暖，大渡桥横铁索寒。
+                更喜岷山千里雪，三军过后尽开颜。
+            </div>
+        </div>
+
+        <!-- 七律·和郭沫若同志 -->
+        <div class="poem">
+            <div class="poem-title">七律 · 和郭沫若同志</div>
+            <div class="poem-body">
+                一从大地起风雷，便有精生白骨堆。
+                僧是愚氓犹可训，妖为鬼蜮必成灾。
+                金猴奋起千钧棒，玉宇澄清万里埃。
+                今日欢呼孙大圣，只缘妖雾又重来。
+            </div>
+            <div class="poem-link">
+                <a href="https://www.gushiwen.cn/shiwenv_57eab06d55dc.aspx" target="_blank">[诗文出处]</a>
+            </div>
+        </div>
+
+        <!-- 十六字令三首 -->
+        <div class="poem">
+            <div class="poem-title">十六字令三首</div>
+            <div class="poem-body">
+                山，快马加鞭未下鞍。惊回首，离天三尺三。
+
+                山，倒海翻江卷巨澜。奔腾急，万马战犹酣。
+
+                山，刺破青天锷未残。天欲堕，赖以拄其间。
+            </div>
+            <div class="poem-link">
+                <a href="https://www.gushiwen.cn/shiwenv_8dc94b932df2.aspx" target="_blank">[诗文出处]</a>
+            </div>
+        </div>
+
+        <!-- ========== 常用链接 ========== -->
+        <div class="section-divider">
+            <div class="section-title">常用链接</div>
+        </div>
+
+        <!-- 技术社区 -->
+        <div class="link-category">技术社区</div>
         <ul class="links">
-            <li>
-                <!-- 链接到 GitHub -->
-                <a href="https://github.com" target="_blank">GitHub</a>
-            </li>
-            <li>
-                <!-- 链接到 B 站 -->
-                <a href="https://www.bilibili.com" target="_blank">B站</a>
-            </li>
-            <li>
-                <!-- 链接到知乎 -->
-                <a href="https://www.zhihu.com" target="_blank">知乎</a>
-            </li>
-            <li>
-                <!-- 链接到 Z-Library -->
-                <a href="https://z-lib.io" target="_blank">Z-Library</a>
-            </li>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://www.csdn.net" target="_blank">CSDN 社区</a></li>
+        </ul>
+
+        <!-- AI 工具 -->
+        <div class="link-category">AI 工具</div>
+        <ul class="links">
+            <li><a href="https://www.coze.com" target="_blank">Coze 工作流</a></li>
+        </ul>
+
+        <!-- 视频娱乐 -->
+        <div class="link-category">视频娱乐</div>
+        <ul class="links">
+            <li><a href="https://www.bilibili.com" target="_blank">B站</a></li>
+            <li><a href="https://www.yinghuacd.com" target="_blank">樱花动漫</a></li>
+        </ul>
+
+        <!-- 阅读与学术 -->
+        <div class="link-category">阅读与学术</div>
+        <ul class="links">
+            <li><a href="https://www.zhihu.com" target="_blank">知乎</a></li>
+            <li><a href="https://www.biquge.com" target="_blank">笔趣阁</a></li>
+            <li><a href="https://z-lib.io" target="_blank">Z-Library</a></li>
+            <li><a href="https://www.webofscience.com" target="_blank">Web of Science</a></li>
+            <li><a href="https://www.chaoxing.com" target="_blank">超星学习通</a></li>
         </ul>
 
     </div>
+
+    <!-- ========== 返回顶部按钮 ========== -->
+    <button id="back-to-top" title="返回顶部">&#8679;</button>
+
+    <script>
+        var btn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+
+        btn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
